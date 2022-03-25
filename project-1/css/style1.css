@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+@import url(font.css);
+
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f6f6f6;
+  padding: 20px;
+}
+
+.header_container {
+  max-width: 1450px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.header_title {
+  font-family: "Roadkill", sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.list_item {
+  position: relative;
+  display: inline-block;
+  margin-right: 80px;
+}
+.list_item::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: transform ease-in-out 0.25s;
+  transform-origin: bottom left;
+}
+
+.list_item:hover::after {
+  transform: scaleX(1);
+}
+
+.list_item:last-of-type {
+  margin-right: 0;
+}
+
+.list_link {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.heade_icon {
+  margin-right: 30px;
+}
+
+.heade_icon:last-of-type {
+  margin-right: 0;
+}
+
+.cards {
+  margin-top: 130px;
+  display: flex;
+  justify-content: space-around;
+  background-image: url(../assets/images/bg/background.svg);
+  background-size: cover;
+  background-position: bottom -150px center;
+  background-repeat: no-repeat;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 100%;
+  max-width: 33%;
+  position: relative;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.card:nth-child(2) {
+  margin-top: -50px;
+}
+
+.card_image {
+  transition: all ease-in-out 0.8s;
+  cursor: pointer;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.card_body {
+  height: inherit;
+  transition: all ease-in-out 0.8s;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #000000;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.card:hover .card_body {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+
+.card:hover .card_image {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.card_text {
+  font-size: 16px;
+  line-height: 36px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.card_subtext {
+  font-size: 18px;
+  position: absolute;
+  font-weight: bold;
+  text-decoration: underline;
+  line-height: 24px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 125px 20px 60px;
+}
+
+.footer_text {
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.foot_icon img {
+  margin-right: 30px;
+}
+
+.foot_icon img:last-of-type {
+  margin-right: 0;
+}
+
+
+/* media */
+
+/* 1200 */
+
+@media (max-width: 1200px) {
+  .header_container {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header_container_item:nth-child(2) {
+    margin: 20px 0;
+  }
+
+  .card {
+    max-width: 50%;
+  }
+
+  .card:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .card:last-of-type {
+    margin-top: 30px;
+  }
+
+
+
+}
+
+/* 350 */
+
+@media (min-width: 350px) and (max-width: 700px) {
+    
+.list_item{
+    display: block;
+margin: 5px 0;
+text-align: center;
+}
+
+.cards{
+    margin-top: 50px;
+}
+
+.card{
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.card:last-of-type{
+    margin-top: 0;
+}
+
+.card:nth-child(2){
+    margin-top: 0;
+}
+
+.card_image{
+    width: 300px;
+    height: auto;
+}
+
+.card_text{
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.footer{
+    padding: 20px;
+}
+
+.footer_icon img { 
+    margin-right: 15px;
+}
+
+.footer_icon img:last-of-type{
+    margin-right: 0;
+}
+
+}
